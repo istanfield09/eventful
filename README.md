@@ -2,6 +2,7 @@ This is a demo application I built the week of March 16th, 2015 using the Django
 It was built as part of the application/interview process for Eventbrite's internship program.
 
 You will want to create a Python environment and install requirements via pip.<br />
+<code>virtualenv eventful</code>
 <code>pip install requirements</code>
 
 
