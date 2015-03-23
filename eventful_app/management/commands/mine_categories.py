@@ -8,6 +8,10 @@ import urllib2
 # This custom administration command is used to seed the database with the
 # event categories that are available on Eventbrite's API.
 
+# To use this command run 'python manage.py mine_categories'.
+# I would probably only do this once as the script
+# doesn't detect if category objects already exist or not.
+
 class Command(BaseCommand):
 
 	 def handle(self, *args, **options):
