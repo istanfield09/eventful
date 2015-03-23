@@ -1,0 +1,19 @@
+<html>
+	{% include "includes/head.html" %}
+	<body>
+	{% include "includes/nav.html" %}
+		<div class = "container">
+			<h1>Choose your top three!</h1>
+	  				{% for cat in categories %}
+
+	  				<li class="category"><div id="text"><span id="cat_id">{{ cat.category_id }}</span>{{ cat.name }}</div></li>
+	  				{% endfor %}
+
+					<a href="/results/" onclick="location.href=this.href+stringQuery;return false;" id="search">
+						<div class="ui button" id="actual">
+	  						Search
+						</div>
+					</a>
+		</div>
+	</body>
+</html>

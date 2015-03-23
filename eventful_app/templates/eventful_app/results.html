@@ -1,0 +1,56 @@
+<html>
+	{% include "includes/head.html" %}
+	<body>
+		{% include "includes/nav.html" %}
+		
+		<div class="container">
+			<a href="{% url 'show_cats' %}">Start another search</a>
+			<h1>These are the results:<br/></h1>
+			
+			{% for name, url, city, region, country, date, description, ticket_list in list %}
+				<div class="ui segment">
+					<a href="{{url}}">{{name}}</a>
+
+					{% if region != "N/A" %}, at {{city}}, {{region}}, {{country}}.{% endif %}<br />
+
+					<strong>Date:</strong> {{ date }}.<br />
+					<strong>Description:</strong> {{ description }}<br /><br />
+					<strong>Ticket Information:</strong><br />
+
+					<small>{% for ticket_name, ticket_cost, ticket_status in ticket_list %}
+						<strong>{{ ticket_name }}</strong><br />
+						<strong>Approximate Cost: </strong>{{ ticket_cost }}<br />
+						<strong>Status: </strong>{{ ticket_status }}<br /><br />
+						{% endfor %}</small>
+
+				</div>	
+			{% endfor %}
+
+
+
+			There are {{num_of_pages}} pages. You are on page {{current_page}}.
+
+			{% if current_page > 1 %}
+				<a href="/results/{{api_query|escape}}&amp;page={{previous_page}}">
+					<div class="ui button" id="actual">
+	  					Last Page
+					</div>
+				</a>
+			{% endif %}	
+
+			{% if current_page != num_of_pages %}
+				<a href="/results/{{api_query|escape}}&amp;page={{next_page}}">
+					<div class="ui button" id="actual">
+	  					Next Page
+					</div>
+				</a>
+			{% endif %}	
+		</div>
+	
+	</body>
+
+</html>
+
+
+
+
