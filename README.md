@@ -1,5 +1,5 @@
 March 25th edit: My deployment to Heroku crashed numerous times due to time out errors. <br />
-There is a working deployment on [ianstanfield.com](ianstanfield.com:3000).
+There is a working deployment on [ianstanfield](http://ianstanfield.com:3000).
 
 This is a demo application I built the week of March 16th, 2015 using the Django web development framework. 
 It was built as part of the application/interview process for Eventbrite's internship program.
